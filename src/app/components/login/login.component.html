@@ -1,0 +1,32 @@
+<mat-card>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="emailId">
+      <input
+        type="email"
+        matInput
+        value=""
+        placeholder="Enter email"
+        formControlName="emailId"
+      />
+      <!-- <mat-error *ngIf="loginForm.controls['emailId'].hasError('required')">
+        email must not be empty
+      </mat-error> -->
+    </div>
+    <div class="password">
+      <input
+        matInput
+        placeholder="Enter password"
+        [type]="hide ? 'text' : 'password'"
+        formControlName="password"
+      />
+      <!-- <mat-error *ngIf="loginForm.controls['password'].hasError('required')">
+        password must not be empty
+      </mat-error> -->
+    </div>
+    <div class="submit-user" fxLayoutAlign="space-around">
+      <button mat-raised-button type="submit" class="login">
+        Login
+      </button>
+    </div>
+  </form>
+</mat-card>
